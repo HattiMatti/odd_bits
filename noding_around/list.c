@@ -6,7 +6,7 @@
 /*   By: msiitone <msiitone@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 23:36:43 by msiitone          #+#    #+#             */
-/*   Updated: 2024/04/12 00:49:50 by msiitone         ###   ########.fr       */
+/*   Updated: 2024/04/12 01:23:41 by msiitone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,16 @@ Node	*array_to_linked_list(int argc, char **argv)
 		i++;
 	}
 	return (head);
+}
+
+void print_list(Node *head)
+{
+	Node *current;
+
+	current = head;
+	while (current != NULL)
+	{
+		printf("%d\n", current->data);
+		current = current->next;
+	}
 }
