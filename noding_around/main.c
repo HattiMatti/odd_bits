@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list.h                                             :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msiitone <msiitone@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 23:13:19 by msiitone          #+#    #+#             */
-/*   Updated: 2024/04/13 23:40:28 by msiitone         ###   ########.fr       */
+/*   Created: 2024/04/13 22:37:53 by msiitone          #+#    #+#             */
+/*   Updated: 2024/04/13 23:39:09 by msiitone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIST_H
-# define LIST_H
+#include "list.h"
 
-# include <stdlib.h>
-# include <stdio.h>
-
-typedef struct s_node
+int	main(int argc, char **argv)
 {
-	int				data;
-	struct s_node	*next;
-}	t_node;
+	int		i;
+	t_node	*head;
+	t_node	*current;
+	t_node	*temp;
 
-t_node	*create_node(int data);
-t_node	*array_to_linked_list(int argc, char **argv);
-void	print_list(t_node *head);
-
-#endif
+	head = array_to_linked_list(argc, argv);
+	print_list(head);
+	current = head;
+	while (current != NULL)
+	{
+		temp = current;
+		current = current->next;
+		free(temp);
+	}
+	return (0);
+}
