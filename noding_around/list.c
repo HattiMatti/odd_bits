@@ -6,7 +6,7 @@
 /*   By: msiitone <msiitone@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 23:36:43 by msiitone          #+#    #+#             */
-/*   Updated: 2024/04/13 23:42:25 by msiitone         ###   ########.fr       */
+/*   Updated: 2024/04/14 00:05:28 by msiitone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ t_node	*array_to_linked_list(int argc, char **argv)
 
 	head = NULL;
 	current = NULL;
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (i++ < (argc - 1))
 	{
 		num = atoi(argv[i]);
 		new_node = create_node(num);
@@ -49,7 +49,6 @@ t_node	*array_to_linked_list(int argc, char **argv)
 			current->next = new_node;
 			current = new_node;
 		}
-		i++;
 	}
 	return (head);
 }
