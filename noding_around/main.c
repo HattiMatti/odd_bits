@@ -20,6 +20,7 @@ int	main(int argc, char **argv)
 	t_node	*temp;
 
 	head = array_to_linked_list(argc, argv);
+	set_index(&head);
 	print_list(head);
 	current = head;
 	while (current != NULL)

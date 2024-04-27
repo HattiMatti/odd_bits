@@ -15,15 +15,20 @@
 
 # include <stdlib.h>
 # include <stdio.h>
+# include <limits.h>
 
-typedef struct s_node
-{
+
+typedef struct s_node {
 	int				data;
+	int				index;
 	struct s_node	*next;
 }	t_node;
 
 t_node	*create_node(int data);
 t_node	*array_to_linked_list(int argc, char **argv);
 void	print_list(t_node *head);
+int		ft_find_highest(t_node **head);
+int		ft_find_smallest(t_node **head);
+void	set_index(t_node **head);
 
 #endif

@@ -20,6 +20,7 @@ t_node	*create_node(int data)
 	if (new_node == NULL)
 		return (NULL);
 	new_node->data = data;
+	new_node->index = 0;
 	new_node->next = NULL;
 	return (new_node);
 }
@@ -58,9 +59,10 @@ void	print_list(t_node *head)
 	t_node	*current;
 
 	current = head;
+	printf("printed list:\n");
 	while (current != NULL)
 	{
-		printf("%d\n", current->data);
+		printf("%d, %d\n", current->data, current->index);
 		current = current->next;
 	}
 }
